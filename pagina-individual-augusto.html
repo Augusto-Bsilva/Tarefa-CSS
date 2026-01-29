@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="index.css">
+    <link href="reset.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
     <title>Sobre Augusto</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <main>
         <section class="introduction">
             <figure> <!--imagem minha e apresentação-->
-                <img src="TroteSI.jpg" alt="Augusto no trote de pintura">
+                <img src="TroteSI.jpg" alt="Augusto no trote de pintura" width="300px" height="250">
                 <figcaption>
                 Eu no trote de pintura na praça do Jambeiro(Supostamente era pra ser o Luigi do Mario)
                 </figcaption>
@@ -51,20 +51,27 @@
                 </ol>
             </div>
         </section>
-        <section> <!--seção para feedbacks-->
-            <h2>Feedbacks</h2>
-            <form>
-                <input type="text" name="nome" placeholder="Nome completo" required><br><br>
-                <textarea name="feedback" placeholder="Feedback" rows="5" cols="30" required></textarea><br>
-                <button type="submit">Enviar</button>
+        <br>
+            <form class="feedbacks">
+                <div class="title-feedback">
+                    <h2>Deixe seu feedback</h2>
+                </div>
+                <input type="text" name="nome" placeholder="Nome completo" required>
+                <textarea name="feedback" placeholder="Feedback" rows="5" cols="30" required></textarea>
+                <div class="position-button">
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
-        </section>
-        <footer> <!--Rodapé com links para o contato-->
-            <h2>Links</h2> 
-            <nav>
-                <a href="https://github.com/Augusto-Bsilva">Git Hub</a>
-                <a href="https://www.instagram.com/bs.augusto/">Instagram</a>
-                <a href="pagina-contato-augusto.html">Página oficial de contato</a>
+        <br>
+        <footer class="end"> <!--Rodapé com links para o contato-->
+            <nav class="link">
+                <div>
+                    <a href="https://github.com/Augusto-Bsilva"><img src="git.png" alt="GitHub logo"></a>
+                    <a href="https://www.instagram.com/bs.augusto/"><img src="insta.png" alt="Instagram logo"></a>
+                </div>
+                <div>
+                    <a href="pagina-contato-augusto.html"><span>Página oficial de contato</span></a>
+                </div>
             </nav>
         </footer>
     </main>
