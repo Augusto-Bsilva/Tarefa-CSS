@@ -13,7 +13,8 @@ header{
     display: flex;
     background:linear-gradient(45deg,#0b3c64b7,#07689fb7,#04a0cdb7);
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 600px;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 header>h1{
@@ -69,6 +70,15 @@ header nav a:active{
     transition: all 0.6s;
     
 }
+hamburger-icon, #menu-toggle {
+  display: none; /* Escondido no desktop */
+}
+
+.menu-list {
+  display: flex; /* Menu horizontal ou botão único */
+  list-style: none;
+  gap: 20px;
+}
 /*-------------------------------Main---------------------------------*/ 
 body {
     margin: 0;
@@ -123,9 +133,8 @@ main{
     color: white;
 }
 .introduction figure>img{
-    max-width: 247px;
     width: 247px;
-    height: auto;
+    height: 247px;
     
     border-radius: 200px;
     box-shadow: 4px 4px 4px 0px #00000040;
@@ -214,8 +223,7 @@ main{
 
 }
 .hobbies{
-    max-width: 595px;
-    width: 100%;
+    width: 595px;
     height: 249px;
     padding: 20px;
     gap: 26px;
@@ -226,8 +234,7 @@ main{
 
 }
 .top5{
-    max-width: 595px;
-    width: 100%;
+    width: 595px;
     height: 249px;
     padding: 20px;
     gap: 26px;
@@ -253,8 +260,7 @@ main{
     flex-direction: row;
 }
 .lists>div>ul{
-    max-width: 555px;
-    width: 100%;
+    width: 555px;
     height: 150px;
     gap: 10px;
 
@@ -324,8 +330,7 @@ main{
     overflow: hidden;
 }
 .lists>div>ol{
-    max-width: 555px;
-    width: 100%;
+    width: 555px;
     height: 150px;
     gap: 10px;
     opacity: 1;
@@ -510,8 +515,7 @@ button{
     color: white;
     padding: 5px;
 }
-/*------------------footer-----------------------*/
-
+/*----------------------------footer-----------*/
 .end{
    
     width:100%;
@@ -599,138 +603,241 @@ button{
     gap: 50px;
 }
 
-/*---------------------responsividade-----------*/
-@media screen and (max-width:430px){
-    .introduction{
-    max-width: 430px;
-    width:100%;
-    height: auto;
-    top: 111px;
-    padding: 32px;
-    gap: 33px;
+/*-----------------------------responsividade------------------------*/
+@media (max-width: 433px) {
+    * {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Alata', sans-serif; 
+}
+
+main{
+    background-color: rgb(0, 27, 63);
+    width: 100%;
+    display: flex;      
+    flex-direction: column; 
+    align-items: center; 
+}
+
+
+header{
+    width: 100%;
+    min-height: 109;
+    gap: 15px;
+    padding: 28px 20px; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background: linear-gradient(45deg, #0b3c64b7, #07689fb7, #04a0cdb7);
     align-items: center;
-    }
-    header{
-    max-width: 430px;
-    width: 100%;
-    height: 109px;
-    top: 1px;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 28px;
-    padding-right: 30px;
-    padding-bottom: 28px;
-    padding-left: 30px;
-    }
-
-    header>nav>a{
-    max-width: 60px;
-    width: 100%;
-    }
-    header>nav>a:hover{
-        transform: none;
-        font-size: inherit;
-    }
-
-    .introduction>div{
-    max-width: 430px;
-    width: 100%;
-    height: 242.5px;
-    }
-    .introduction>figure>figcaption{
-    width: 100%;
-    height: 242.5px;
-    }
-
-    .lists{
-    max-width: 430px;
-    width: 100%;
-    height: 890px;
-    top: 695px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-    .lists>ol{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: centerr;
-
-    }
-
-    .lists>ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-
-    .lists>li{
-    max-width: 160px;
-    width: 45%;
-
-    }
-
-    .lists>li:hover{
-    transform: none;
-    transition: none;
-    font-size: inherit;
-    }
-
-
-
-    .hobbies{
-    max-width: 423px;
-    width: 100%;
-    height: 425px;
-    gap: 26px;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-
-    .top5{
-        width: 429px;
-        height: 425px;
-        gap: 26px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    .feedbacks{
-    max-width: 384px;
-    width: 100%;
-    height: 236px;
-    }
-    .end{
-    max-width: 427px;
-    width: 100%;
-    height: 127px;
-    top: 1850px;
-    left: 1px;
-    padding-top: 16px;
-    padding-right: 32px;
-    padding-bottom: 16px;
-    padding-left: 32px;
-    gap: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-    .position-button:hover button{
-        transform: none;
-        font-size: inherit;
-    }
     
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+header>h1{
+    font-size: 40px;
+    line-height: 100%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: rgba(76, 88, 252, 0.247);
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-right: 20px; 
+}
+
+header>nav>a{
+    padding: 8px 16px;
+    border: 2px solid rgba(76, 88, 252, 0.096);
+    border-radius: 15px;
+    background-color: rgba(76, 88, 252, 0.233);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 24px;
+    white-space: nowrap; 
+}
+
+.introduction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 60px;
+    border-bottom: 2px solid whitesmoke;
+    margin: 0 auto;
+    gap: 50px; 
+    flex-wrap: wrap; 
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.introduction>figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.introduction>figure>img{
+    width: 247px;
+    height: 247px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 4px 4px 4px 0px #00000040;
+}
+
+.introduction>div{
+    max-width: 614px;
+    width: 100%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #0b3c64b7, #07689fb7, #04a0cdb7);
+    padding: 25px;
+    color: white;
+}
+    
+.lists{
+    max-width: 480px;
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    max-width: 100%;
+    height: auto; 
+    padding: 20px;
+    gap: 60px; 
+    margin-bottom: 50px; 
+    top: auto; 
+}
+.top5{
+    max-width: 480px;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.hobbies{
+    max-width: 480px;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+     margin: 0;
+}
+
+    
+.lists>div>h3{
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+    
+
+.lists>div>ol{
+    max-width: 480px;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+}
+.lists>div>ul{
+    max-width: 480px;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+}
+.lists>div>ol>li {
+    max-width: 480px;
+    width: 45%; 
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.lists>div>ul>li{
+    max-width: 480px;
+    width: 45%; 
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+
+
+.feedbacks{
+    max-width: 480px;
+    margin-top: 20px; 
+    height: auto;
+    width: 90%;
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    background-color: rgba(0, 140, 255, 0.24);
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+
+.feedbacks>textarea{
+    max-width: 480px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+}
+.feedbacks>input{
+    max-width: 480px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+}
+
+.position-button{
+    max-width: 480px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.end{
+     max-width: 480px;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(45deg, #0b3c64b7, #07689fb7, #04a0cdb7);
+    display: flex;
+    justify-content: center;
+    margin-top: auto; 
+}
+
+.link{
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    gap: 20px;
+}
 }
