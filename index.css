@@ -14,7 +14,8 @@ header{
     background:linear-gradient(45deg,#0b3c64b7,#07689fb7,#04a0cdb7);
     align-items: center;
     justify-content: center;
-    gap: 600px;
+    
+    gap: 300px;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 header>h1{
@@ -37,7 +38,7 @@ header>h1{
     text-decoration: underline;
     padding: 10px;
 }
-header>nav a{
+.menu-items>a{
     max-width: 75px;
     width: 100%;
     height: 49px;
@@ -54,7 +55,7 @@ header>nav a{
     text-decoration: none;
     font-size: 24px;
 }
-header>nav a:hover{
+.menu-items>a:hover{
     background-color: rgba(76, 88, 252, 0.426);
     box-shadow: 0px 4px 4px 0px #00000040;
     transition: all 0.5s;
@@ -63,27 +64,21 @@ header>nav a:hover{
     overflow: hidden;
     transform: scale(1.2);
 }
-header nav a:active{ 
+.menu-items>a:active{ 
     font-size: 16px;
     color: blue;
     text-decoration: underline;
     transition: all 0.6s;
     
 }
-hamburger-icon, #menu-toggle {
-  display: none; /* Escondido no desktop */
+#menu-toggle {
+  display: none; 
 }
 
-.menu-list {
-  display: flex; /* Menu horizontal ou botão único */
-  list-style: none;
-  gap: 20px;
-}
-/*-------------------------------Main---------------------------------*/ 
+/*-------------------------------main---------------------------------*/ 
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 main{
@@ -633,12 +628,17 @@ header{
     flex-direction: column;
     background: linear-gradient(45deg, #0b3c64b7, #07689fb7, #04a0cdb7);
     align-items: center;
-    
     box-shadow: 0px 4px 4px 0px #00000040;
+    position: relative; 
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 30px;
+    height: auto;
 }
 
 header>h1{
-    font-size: 40px;
+    width: auto;
+    font-size: 28px;
     line-height: 100%;
     box-shadow: 0px 4px 4px 0px #00000040;
     background-color: rgba(76, 88, 252, 0.247);
@@ -646,20 +646,61 @@ header>h1{
     color: white;
     text-align: center;
     padding: 10px 20px;
-    margin-right: 20px; 
+    margin:0
+}
+.hamburger{
+    max-width: 50px;
+    display: flex;
+    z-index: 2;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
 }
 
-header>nav>a{
-    padding: 8px 16px;
-    border: 2px solid rgba(76, 88, 252, 0.096);
-    border-radius: 15px;
-    background-color: rgba(76, 88, 252, 0.233);
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 24px;
-    white-space: nowrap; 
+.hamburger>.line{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.menu-items{
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    width: 100%;
+    background-color: rgb(0, 27, 63); 
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    border-bottom: 2px solid whitesmoke;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    }
+
+.menu-items>a{
+    max-width: 100px;
+    width: 80%;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#menu-toggle:checked ~ .menu-items {
+    display: flex;
+    transition: all ease .4s;
 }
 
+#menu-toggle:checked ~ .hamburger>.line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px) ;
+}
+#menu-toggle:checked ~ .hamburger>.line:nth-child(2) {
+    opacity: 0; 
+}
+#menu-toggle:checked ~ .hamburger>.line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px) ;
+}
 .introduction{
     display: flex;
     flex-direction: column;
@@ -721,8 +762,6 @@ header>nav>a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    margin: 0;
 }
 .hobbies{
     max-width: 480px;
@@ -730,12 +769,9 @@ header>nav>a{
     height: auto; 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0;
-     margin: 0;
+    align-items: center; 
 }
 
-    
 .lists>div>h3{
     max-width: 480px;
     width: 100%;
@@ -743,8 +779,6 @@ header>nav>a{
     justify-content: center;
     margin-bottom: 20px;
 }
-
-    
 
 .lists>div>ol{
     max-width: 480px;
@@ -779,9 +813,6 @@ header>nav>a{
     height: 150px;
     margin-bottom: 10px;
 }
-
-
-
 .feedbacks{
     max-width: 480px;
     margin-top: 20px; 
@@ -797,8 +828,6 @@ header>nav>a{
     border-radius: 15px;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
-
-
 .feedbacks>textarea{
     max-width: 480px;
     width: 100%;
