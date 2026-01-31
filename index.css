@@ -850,11 +850,12 @@ header>h1{
 }
 
 .end{
-     max-width: 480px;
+    max-width: 480px;
     width: 100%;
     padding: 20px;
     background: linear-gradient(45deg, #0b3c64b7, #07689fb7, #04a0cdb7);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-top: auto; 
 }
